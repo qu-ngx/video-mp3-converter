@@ -1,1 +1,10 @@
 # video-mp3-services
+
+## Local Installation
+
+**Requirements**:
+
+- Docker: [https://www.docker.com/get-started/](https://www.docker.com/get-started/)
+- Kubernetes CLI: [https://kubernetes.io/docs/tasks/tools/](https://kubernetes.io/docs/tasks/tools/)
+- Minikube (For local installation): [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
+- k9s (For cluster management): []()
