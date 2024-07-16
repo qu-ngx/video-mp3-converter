@@ -4,7 +4,7 @@ metadata:
   name: rabbitmq-ingress
 spec:
   rules:
-    - hosts: rabbitmq-manager.com
+    - host: rabbitmq-manager.com
       http:
         paths:
           - path: /
