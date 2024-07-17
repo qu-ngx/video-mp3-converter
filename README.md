@@ -39,3 +39,25 @@ minikube addons enable ingress
 ```bash
 minikube tunnel
 ```
+
+**Setting Up RabbitMQ:**
+
+- Install RabbitMQ via your package manager:
+
+```bash
+brew install rabbitmq
+```
+
+- Enable RabbitMQ management:
+
+```bash
+rabbitmq-plugins enable rabbitmq_management
+```
+
+- Start RabbitMQ server:
+
+```bash
+brew services start rabbitmq
+```
+
+- If you can't access https://rabbitmq-management.com/, access RabbitMQ via its default localhost address at http://localhost:15672/

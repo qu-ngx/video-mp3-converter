@@ -4,11 +4,12 @@ import tempfile
 
 import moviepy.editor
 import pika
-from bson.ojectid import ObjectId
+from bson.objectid import ObjectId
 
 
 def start(message, fs_videos, fs_mp3s, channel):
     message = json.loads(message)
+
     # empty temp file
     tf = tempfile.NamedTemporaryFile()
     # video contents
@@ -23,7 +24,7 @@ def start(message, fs_videos, fs_mp3s, channel):
     tf_path = tempfile.gettempdir() + f"/{message['video_fid']}.mp3"
     audio.write_audiofile(tf_path)
 
-    # save the file to mongo
+    # save file to mongo
     f = open(tf_path, "rb")
     data = f.read()
     fid = fs_mp3s.put(data)
@@ -44,4 +45,3 @@ def start(message, fs_videos, fs_mp3s, channel):
     except Exception as err:
         fs_mp3s.delete(fid)
         return "failed to publish message"
-    pass
