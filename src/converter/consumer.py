@@ -10,7 +10,7 @@ from pymongo import MongoClient
 
 def main():
     client = MongoClient("host.minikube.internal", 27017)
-    db_videos = client.video
+    db_videos = client.videos
     db_mp3s = client.mp3s
     # gridfs
     fs_videos = gridfs.GridFS(db_videos)
@@ -31,7 +31,7 @@ def main():
         queue=os.environ.get("VIDEO_QUEUE"), on_message_callback=callback
     )
 
-    print("Waiting for messages. To exit press CTRL + C")
+    print("Waiting for messages. To exit press CTRL+C")
 
     channel.start_consuming()
 
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("Interupted")
+        print("Interrupted")
         try:
             sys.exit(0)
         except SystemExit:
